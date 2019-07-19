@@ -1,0 +1,42 @@
+﻿@model Test.Models.SomeQuestion
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@using (Html.BeginForm("ProcessQuestionary", "Home", FormMethod.Post))
+{
+    <div class="jumbotron">
+        <b>Вопрос @Model.QuestionId</b><br>
+        <input type="text" name="Text" value="@Model.Text" readonly>
+        <input type="text" name="SessionId" value=@Model.SessionId hidden>
+        <input type="text" name="QuestionId" value=@Model.QuestionId hidden><br>
+        <input type="text" name="ThisAnswer">
+        @*@if (Model.QuestionId == 0)
+        {
+            <input type="text" name="ThisAnswer"><br>
+        }
+        else if (Model.QuestionId == 1)
+        {
+            <input type="number" name="ThisAnswer"><br>
+        }
+        else if (Model.QuestionId == 2)
+        {
+            <select size="0" name="ThisAnswer">
+            </select><br>
+        }
+        else if (Model.QuestionId == 3)
+        {
+            <input type="text" name="ThisAnswer"><br>
+        }
+        else if (Model.QuestionId == 4)
+        {
+            <input type="text" name="ThisAnswer"><br>
+        }
+        else if (Model.QuestionId == 5)
+        {
+            <input type="text" name="ThisAnswer"><br>
+        }*@
+        <input type="submit" name="questionNumber" value="Last">
+        <input type="submit" name="questionNumber" value="Next">
+    </div>
+}
